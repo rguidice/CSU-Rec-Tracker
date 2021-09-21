@@ -1,0 +1,1 @@
+Script to scrape CSU Rec Center live facility counts from the [CSU Rec website](https://csurec.colostate.edu/facility/rec-cams/) and plot the data. Used to learn when the gym is used most frequently, to avoid crowded times. Still a work-in-progress.
