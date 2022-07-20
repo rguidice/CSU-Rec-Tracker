@@ -2,6 +2,7 @@
 #   Description: Script to track CSU rec counts
 
 import argparse
+import time
 from selenium import webdriver
 
 if __name__ == "__main__":
@@ -9,8 +10,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CSU rec count tracker")
     parser.add_argument('-hl', '--headless', help="Run chrome webdriver in headless mode", action="store_true")
     args = parser.parse_args()
-    # username = args.username
-    # password = args.password
     if args.headless:
         headless = True
     else:
@@ -23,6 +22,8 @@ if __name__ == "__main__":
     driver = webdriver.Chrome(options=chrome_options)
     driver.get("https://csurec.colostate.edu/facility/rec-cams/")
 
-    metrics = driver.find_elements_by_css_selector("text-align:center;")
+    time.sleep(5)
+
+    metrics = driver.find_elements_by_xpath('//div[contains(@style,"text-align:center;")]')
 
     print(metrics)
